@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  number: MyString
+  type: 
+  footnote: MyText
+  population: MyString
+  domain: MyString
+  status: MyString
+
+two:
+  title: MyText
+  number: MyString
+  type: 
+  footnote: MyText
+  population: MyString
+  domain: MyString
+  status: MyString

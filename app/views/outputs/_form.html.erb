@@ -1,0 +1,80 @@
+
+ 
+<%= form_with scope: :output, url: outputs_path, local: true do |form| %>
+
+  <% if @output.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@output.errors.count, "error") %> prohibited
+        this output from being saved:
+      </h2>
+      <ul>
+        <% @output.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class="container">
+  <div class="panel-group">
+  
+    <div class="panel panel-info ">
+       <div class="panel-heading"><%= form.label :Domain %><br></div>
+       <div class="panel-body"><%= form.text_field :domain %></div>
+	</div>
+	
+ <div class="panel panel-info ">
+       <div class="panel-heading"> <%= form.label :Type %><br></div>
+       <div class="panel-body"><%= form.text_field :TFL %></div>
+	</div>
+ <div class="panel panel-info ">
+       <div class="panel-heading"> <%= form.label :Number %><br></div>
+       <div class="panel-body"><%= form.text_field :number %></div>
+</div>	
+ <div class="panel panel-info ">
+       <div class="panel-heading"> <%= form.label :Title %><br></div>
+       <div class="panel-body"><%= form.text_field :title %></div>
+</div>	
+ <div class="panel panel-info ">
+       <div class="panel-heading">  <%= form.label :Population %><br></div>
+       <div class="panel-body"><%= form.text_field :population %></div>
+</div>	
+
+ <div class="panel panel-info ">
+       <div class="panel-heading"> <%= form.label :Footnote %><br></div>
+       <div class="panel-body"><%= form.text_field :footnote %></div>
+  </div>
+  
+ 
+ <div class="panel panel-info ">
+       <div class="panel-heading"> <%= form.label :Program %>
+	   <button type="button" class="btn btn-success">Create</button>
+       <button type="button" class="btn btn-info">Update</button>
+       <button type="button" class="btn btn-warning">Excecute</button>
+	   
+	   <br></div>
+       <div class="panel-body"><%= form.text_field :program_name %></div>
+  </div>
+    
+  <div class="panel panel-info "> 
+       <div class="panel-heading"> <%= form.label :Filename  %>
+	   <button type="button" class="btn btn-success">Open</button>
+	   <br></div>
+       <div class="panel-body"><%= form.text_field :output_file_name %></div>
+	   
+  </div> 
+
+  
+ 
+  
+ <div class="panel panel-info ">
+    <%= form.label :Status %><br>
+    <%= form.text_area :status %>
+  </div>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

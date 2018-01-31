@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
+  </head>
+    <%= render 'layouts/header' %>
+  <body>
+   <div class="container">
+      <%= yield %>
+<h1>Listing of outputs</h1>
+ 
+<%= link_to 'New output', new_output_path %>
+<p></p>
+<table class="table table-striped">
+  <thead>
+  <tr>
+      <th>Domain</th>
+      <th>Type</th>
+      <th>Number</th>
+      <th>Title</th>
+      <th>Population</th>
+      
+	  <th>Status</th>
+	  <th> </th>
+	  <th> </th>
+	  <th> </th>
+  </thead>
+  </tr>
+ 
+  <% @outputs.each do |output| %>
+   <tbody>
+    <tr>
+      <td><%= output.domain %></td>
+      <td><%= output.TFL %></td>
+	  <td><%= output.number %></td>
+      <td><%= output.title %></td>
+	  <td><%= output.population %></td>
+	  	 
+      <td><%= output.status %></td>
+	  
+      <td><%= link_to 'Show', output_path(output) %></td>
+	  <td><%= link_to 'Edit', edit_output_path(output) %></td>
+	 
+	  <td><%= link_to 'Destroy', output_path(output),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  
+ </tbody>
+</table>
+<p></p>
+  <%= link_to 'Back', outputs_path %>
+  
+    <%= render 'layouts/footer' %>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<div class="container">
+ <div class="well well-sm">
+
+<p>
+  <strong>TFL:</strong>
+  <%= @output.TFL %>
+</p>
+
+
+<p>
+  <strong>Domain:</strong>
+  <%= @output.domain %>
+</p>
+<p>
+  <strong>Number:</strong>
+  <%= @output.number %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%= @output.title %>
+</p>
+ <p>
+  <strong>Population:</strong>
+  <%= @output.population %>
+</p>
+<p>
+  <strong>Footnote:</strong>
+  <%= @output.footnote %>
+</p>
+
+<p>
+  <strong>Footnote:</strong>
+  <%= @output.footnote %>
+</p>
+
+<p>
+  <strong>Program:</strong>
+  <%= @output.program_name %>
+</p>
+
+<p>
+  <strong>Output file name:</strong>
+ <%= @output.output_file_name %>
+</p>
+
+ 
+</div  >
+
+
+
+<strong>Comments</strong>
+<%= render @output.comments %>
+<p>
+<strong>Add a comment:</strong>
+<%= render 'comments/form' %>
+</p>
+ 
+ 
+<%= link_to 'Edit', edit_output_path(@output) %> |
+<%= link_to 'Back', outputs_path %>
+
+ 
