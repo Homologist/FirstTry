@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180131065532) do
+ActiveRecord::Schema.define(version: 20180209125541) do
 
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 20180131065532) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["output_id"], name: "index_comments_on_output_id"
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "media_file_name"
+    t.string "media_content_type"
+    t.integer "media_file_size"
+    t.datetime "media_updated_at"
   end
 
   create_table "fileviews", force: :cascade do |t|

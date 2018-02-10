@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @document.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @document.author %>
+</p>
+
+<p>
+
+<iframe src="<%= @document.pdf_url %>" style="overflow:hidden;height:700px;width:100%" height="100%" width="100%"> </iframe>
+</p>
+

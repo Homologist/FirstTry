@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :documents
   get 'study/index'
-  
+  post "documents/convert/:id", to: "documents#convert", as: :convert
  
   
  resources :outputs do
